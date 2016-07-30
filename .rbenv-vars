@@ -1,0 +1,4 @@
+DATABASE_NAME=webchat
+DATABASE_USER=root
+DATABASE_PASSWORD=toptal
+DATABASE_HOST=lxcservices
