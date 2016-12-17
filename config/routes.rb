@@ -7,22 +7,12 @@ Rails.application.routes.draw do
       get '/anios/:anio', to: "ordenanzas#listado_anio"
       get '/temas/*tema', to: "ordenanzas#listado_tema"
     end
-
-#    scope :listados do
-#
-#      get '/*genre/load_more', to: "ranks#genre_rank_load_more"
-#      get '/*genre', to: "ranks#genre_rank", as: :genre_rank
-#    end 
-
-    
-
-
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  root 'ordenanzas#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

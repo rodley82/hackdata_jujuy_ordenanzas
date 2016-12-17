@@ -1,5 +1,43 @@
 <p id="notice"><%= notice %></p>
 
+
+<canvas id="canvas" width="1100" height="450"></canvas>
+
+<script type="text/javascript">
+var myDoughnutChart = new Chart(document.getElementById("canvas"), {
+    type: 'doughnut',
+    data: {
+  labels: [1973,1974,1976,1977,1978,1979,1980,1981,1982,1983,1984,1985,1986,1987,1988,1989,1990,1991],
+datasets: [{label: "Ordenanzas",
+
+backgroundColor: [
+        "#2ecc71",
+        "#3498db",
+        "#95a5a6",
+        "#9b59b6",
+        "#f1c40f",
+        "#e74c3c",
+        "#34495e",
+"rgba(153,255,51,0.4)",
+"rgba(255,153,0,0.4)",
+"rgba(179,11,198,.2)",
+"rgba(179,11,198,1)",
+"rgba(255,153,0,1)",
+"rgba(220,220,220,0.5)",
+"rgba(220,220,220,0.8)",
+"navy",
+"rgba(220,220,220,1)",
+"rgba(220,220,220,0.75)",
+"red",
+"orange"
+      ],
+ data: [132,160,155,72,68,52,38,32,112,62,56,136,88,84,100,158,172,298,21]}]
+}
+});
+</script>
+
+
+
 <div class="row">
                 
     <section id="main" class="col-md-6 col-md-offset-3">
@@ -10,56 +48,58 @@
 			<form class="panel-body form-horizontal payment-form" name="formBusqueda">
 				<div class="form-group">
 					<label for="selector_anio" class="col-md-4 control-label">Seleccione un Año:</label>
+					<div class="col-md-8">
+						<%= select_tag(:anios,
+										options_for_select(
+											@anios
+										),
+										{class: "form-control select2_dropdown", id: "selector_anio"}
+									  )
+						%>
+					</div>
 					
-					<%= select_tag(:anios,
+				</div>
+				<div class="form-group">
+					<label for="selector_tema" class="col-md-4 control-label">Seleccione un Tema:</label>
+					<div class="col-md-8">
+					<%= select_tag(:temas,
 									options_for_select(
-										@anios
+										@temas
 									),
-									{class: "form-control col-md-8", id: "selector_anio"}
+									{class: "form-control select2_dropdown", id: "selector_tema"}
 								  )
 					%>
+					</div>
 					
 				</div>
 			</form>
 		</div>
+
+	<h2>Últimas 10 Ordenanzas publicadas:</h2>	
 		
-		<%= select_tag(:anios,
-						options_for_select(
-						  @anios
-						),
-						{class: "form-control select2_dropdown", id: "selector_anio"}
-					  )
-		%>
+	<table class="table table-striped">
+	  <thead>
+		<tr>
+		  <th>Ordenanza</th>
+		  <th>Titulo</th>
+		  <th colspan="3"></th>
+		</tr>
+	  </thead>
 
-		<%= select_tag(:temas,
-						options_for_select(
-						  @temas
-						),
-						{class: "form-control select2_dropdown", id: "selector_tema"}
-					  )
-		%>
+	  <tbody>
+		<% @ordenanzas.each do |ordenanza| %>
+		  <tr>
+			<th><%= ordenanza.anio %> / <%= ordenanza.numero %></th>
+			<td><%= link_to ordenanza.titulo || ordenanza.sintesis, ordenanza %></td>
+		  </tr>
+		<% end %>
+	  </tbody>
+	</table>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Ordenanza</th>
-      <th>Titulo</th>
+	<br>
 
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @ordenanzas.each do |ordenanza| %>
-      <tr>
-        <th><%= ordenanza.anio %> / <%= ordenanza.numero %></th>
-        <td><%= link_to ordenanza.titulo || ordenanza.sintesis, ordenanza %></td>
-       
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
 
 	
 	</section>

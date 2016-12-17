@@ -10,6 +10,7 @@
       <th>Tema</th>
       <th>Vigente</th>
       <th>Unidad</th>
+      <th>Acciones</th>
     </tr>
   </thead>
 
@@ -21,6 +22,12 @@
         <td> <%= ordenanza.tema %> </td>
         <td> <%= vigente?(ordenanza) %> </td>
         <td> <%= ordenanza.unidad_id %> </td>
+        <td> 
+          
+          <%= link_to ordenanza,class: "btn btn-primary" do %> 
+            Ver <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
