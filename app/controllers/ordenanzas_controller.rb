@@ -4,7 +4,7 @@ class OrdenanzasController < ApplicationController
   # GET /ordenanzas
   # GET /ordenanzas.json
   def index
-    @ordenanzas = Ordenanza.all
+    @ordenanzas = Ordenanza.limit(10)
   end
 
   # GET /ordenanzas/1
@@ -61,6 +61,12 @@ class OrdenanzasController < ApplicationController
     end
   end
 
+  def listado_anio
+    anio=params[:anio]
+    @ordenanzas=Ordenanza.where(anio: anio).order(:numero)
+    render 'listado_ordenanzas'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_ordenanza
@@ -71,4 +77,6 @@ class OrdenanzasController < ApplicationController
     def ordenanza_params
       params.require(:ordenanza).permit(:titulo, :fecha)
     end
+
+    
 end

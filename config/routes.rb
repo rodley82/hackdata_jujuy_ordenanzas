@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  resources :ordenanzas
+  resources :ordenanzas do
+
+    collection do
+      get '/anios/:anio', to: "ordenanzas#listado_anio"
+    end
+
+#    scope :listados do
+#
+#      get '/*genre/load_more', to: "ranks#genre_rank_load_more"
+#      get '/*genre', to: "ranks#genre_rank", as: :genre_rank
+#    end 
+
+    
+
+
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
