@@ -19,7 +19,7 @@
         <td> <%= ordenanza.numero %> </td>
         <td> <%= ordenanza.anio %> </td>
         <td> <%= ordenanza.tema %> </td>
-        <td> <%= ordenanza.vigente %> </td>
+        <td> <%= vigente?(ordenanza) %> </td>
         <td> <%= ordenanza.unidad_id %> </td>
       </tr>
     <% end %>

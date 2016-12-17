@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
     collection do
       get '/anios/:anio', to: "ordenanzas#listado_anio"
+      get '/temas/*tema', to: "ordenanzas#listado_tema"
     end
 
 #    scope :listados do
