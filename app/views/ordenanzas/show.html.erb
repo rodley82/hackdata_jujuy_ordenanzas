@@ -22,13 +22,15 @@
 	  <td><%= @ordenanza.vigente %></td>
 	</tr>
 	<tr>
-	  <th>Unidad id?:</th>
+	  <th>Unidad:</th>
 	  <td><%= @ordenanza.unidad_id %></td>
 	</tr>
-	<tr>
-	  <th>Generalidad id?:</th>
-	  <td><%= @ordenanza.generalidad_id %></td>
-	</tr>
+	<% unless @ordenanza.generalidad_id.blank? %>
+		<tr>
+		  <th>Generalidad:</th>
+		  <td><%= @ordenanza.generalidad_id %></td>
+		</tr>
+	<% end %>
 </table>
 
 <%= link_to 'Edit', edit_ordenanza_path(@ordenanza) %> |
