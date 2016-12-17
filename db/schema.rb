@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217143324) do
+ActiveRecord::Schema.define(version: 20161217173320) do
 
   create_table "ordenanzas", force: :cascade do |t|
     t.string   "titulo",         limit: 255
@@ -26,5 +26,9 @@ ActiveRecord::Schema.define(version: 20161217143324) do
     t.string   "unidad_id",      limit: 255
     t.string   "generalidad_id", limit: 255
   end
+
+  add_index "ordenanzas", ["anio"], name: "index_ordenanzas_on_anio", using: :btree
+  add_index "ordenanzas", ["numero"], name: "index_ordenanzas_on_numero", using: :btree
+  add_index "ordenanzas", ["tema"], name: "index_ordenanzas_on_tema", using: :btree
 
 end
