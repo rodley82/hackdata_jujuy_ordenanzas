@@ -11,7 +11,7 @@
               )
 %>
 
-<table class="table">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Ordenanza</th>
@@ -23,7 +23,7 @@
   <tbody>
     <% @ordenanzas.each do |ordenanza| %>
       <tr>
-        <td><%= ordenanza.anio %> / <%= ordenanza.numero %></td>
+        <th><%= ordenanza.anio %> / <%= ordenanza.numero %></th>
         <td><%= link_to ordenanza.titulo || ordenanza.sintesis, ordenanza %></td>
         <td><%= link_to 'Edit', edit_ordenanza_path(ordenanza) %></td>
         <td><%= link_to 'Destroy', ordenanza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
