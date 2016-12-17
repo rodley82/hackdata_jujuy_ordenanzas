@@ -49,3 +49,5 @@ end
 gem 'mysql2'
 
 gem 'bootstrap-sass'
+
+gem "select2-rails"

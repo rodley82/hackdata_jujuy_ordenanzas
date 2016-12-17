@@ -18,5 +18,9 @@
 !/log/.keep
 /vendor
 /tmp
+<<<<<<< HEAD
+*.gz
+*.csv
 
 app/.dropbox
+*.swp
