@@ -10,6 +10,7 @@ jQuery ->
   $( "#selector_anio" ).on("select2:select", 
     (e)->
       anio_seleccionado = e.params.data.text
+      window.location='ordenanzas/anios/' + anio_seleccionado
       Turbolinks.visit('ordenanzas/anios/' + anio_seleccionado)
   )
 
@@ -17,6 +18,7 @@ jQuery ->
   $( "#selector_tema" ).on("select2:select", 
     (e)->
       tema_seleccionado = e.params.data.text
+      window.location='ordenanzas/temas/' + tema_seleccionado
       Turbolinks.visit('ordenanzas/temas/' + tema_seleccionado)
   )
 
