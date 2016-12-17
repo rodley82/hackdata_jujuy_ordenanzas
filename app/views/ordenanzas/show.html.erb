@@ -1,40 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Numero:</strong>
-  <%= @ordenanza.numero %>
-</p>
-
-<p>
-  <strong>Año:</strong>
-  <%= @ordenanza.anio %>
-</p>
-
-<p>
-  <strong>Tema:</strong>
-  <%= @ordenanza.tema %>
-</p>
-
-<p>
-  <strong>Sintesis:</strong>
-  <%= @ordenanza.sintesis %>
-</p>
-
-<p>
-  <strong>Vigente?:</strong>
-  <%= @ordenanza.vigente %>
-</p>
-
-
-<p>
-  <strong>Unidad id?:</strong>
-  <%= @ordenanza.unidad_id %>
-</p>
-
-<p>
-  <strong>Generalidad id?:</strong>
-  <%= @ordenanza.generalidad_id %>
-</p>
+<table class="table">
+	<tr>
+	  <th>Numero:</th>
+	  <td><%= @ordenanza.numero %></td>
+	</tr>
+	<tr>
+	  <th>Año:</th>
+	  <td><%= @ordenanza.anio %></td>
+	</tr>
+	<tr>
+	  <th>Tema:</th>
+	  <td><%= @ordenanza.tema %></td>
+	</tr>
+	<tr>
+	  <th>Sintesis:</th>
+	  <td><%= @ordenanza.sintesis %></td>
+	</tr>
+	<tr>
+	  <th>Vigente?:</th>
+	  <td><%= @ordenanza.vigente %></td>
+	</tr>
+	<tr>
+	  <th>Unidad id?:</th>
+	  <td><%= @ordenanza.unidad_id %></td>
+	</tr>
+	<tr>
+	  <th>Generalidad id?:</th>
+	  <td><%= @ordenanza.generalidad_id %></td>
+	</tr>
+</table>
 
 <%= link_to 'Edit', edit_ordenanza_path(@ordenanza) %> |
 <%= link_to 'Back', ordenanzas_path %>
