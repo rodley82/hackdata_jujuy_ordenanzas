@@ -4,7 +4,7 @@ class OrdenanzasController < ApplicationController
   # GET /ordenanzas
   # GET /ordenanzas.json
   def index
-    @ordenanzas = Ordenanza.all
+    @ordenanzas = Ordenanza.limit(30)
   end
 
   # GET /ordenanzas/1

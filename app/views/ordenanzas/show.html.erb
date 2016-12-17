@@ -1,40 +1,69 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+                
+                <section id="principal" class="col-md-6 col-md-offset-3">
+						
+						
+						
+                    <h4>Ordenanza:</h4>
+                    <div class="panel panel-default">
+                        <form class="panel-body form-horizontal payment-form" name="formOrdenanza">
+                            <div class="form-group">
+                                <label for="numero" class="col-md-3 control-label">Número:</label>
+                                <div class="col-md-9">
+									<input type="text" class="form-control" id="numero" name="numero" readonly value="<%= @ordenanza.numero %>"></input>
+								</div>
+                            </div>
+							<div class="form-group">
+                                <label for="anio" class="col-md-3 control-label">Año:</label>
+                                <div class="col-md-9">
+									<input type="text" class="form-control" id="anio" name="anio" readonly value="<%= @ordenanza.anio %>"></input>
+								</div>
+                            </div>
+							<div class="form-group">
+                                <label for="tema" class="col-md-3 control-label">Tema:</label>
+                                <div class="col-md-9">
+									<input type="text" class="form-control" id="tema" name="tema" readonly value="<%= @ordenanza.tema %>"></input>
+								</div>
+                            </div>
+							<div class="form-group">
+                                <label for="sintesis" class="col-md-3 control-label">Síntesis:</label>
+                                <div class="col-md-9">
+									<textarea class="form-control" rows="5" id="sintesis" name="sintesis" readonly><%= @ordenanza.sintesis %></textarea>
+								</div>
+                            </div>
+							<div class="form-group">
+                                <label for="vigente" class="col-md-3 control-label">Vigente:</label>
+                                <div class="col-md-9">
+									<input type="text" class="form-control" id="vigente" name="vigente" readonly value="<%= @ordenanza.vigente %>"></input>
+								</div>
+                            </div>
+							<div class="form-group">
+                                <label for="unidad" class="col-md-3 control-label">Unidad:</label>
+                                <div class="col-md-9">
+									<input type="text" class="form-control" id="unidad" name="unidad" readonly value="<%= @ordenanza.unidad_id %>"></input>
+								</div>
+                            </div>
+							<div class="form-group">
+                                <label for="generalidad" class="col-md-3 control-label">Generalidad:</label>
+                                <div class="col-md-9">
+									<input type="text" class="form-control" id="generalidad" name="generalidad" readonly value="<%= @ordenanza.generalidad_id %>"></input>
+								</div>
+                            </div>
+                        </form>
+                    </div>    
 
-<p>
-  <strong>Numero:</strong>
-  <%= @ordenanza.numero %>
-</p>
+					<div class="row">
+						<div class="col-xs-12">
+                            <hr style="border:1px dashed #dddddd;">
+							<button class="btn btn-success preview-add-button col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-12" id="btnDescargar">
+								<span class="glyphicon glyphicon-download"></span> Descargar Ordenanza
+							</button>
+						</div>	
+					</div>
+						<%= link_to 'Edit', edit_ordenanza_path(@ordenanza) %> |
+						<%= link_to 'Back', ordenanzas_path %>
+						
 
-<p>
-  <strong>Año:</strong>
-  <%= @ordenanza.anio %>
-</p>
+                </section> 
 
-<p>
-  <strong>Tema:</strong>
-  <%= @ordenanza.tema %>
-</p>
-
-<p>
-  <strong>Sintesis:</strong>
-  <%= @ordenanza.sintesis %>
-</p>
-
-<p>
-  <strong>Vigente?:</strong>
-  <%= @ordenanza.vigente %>
-</p>
-
-
-<p>
-  <strong>Unidad id?:</strong>
-  <%= @ordenanza.unidad_id %>
-</p>
-
-<p>
-  <strong>Generalidad id?:</strong>
-  <%= @ordenanza.generalidad_id %>
-</p>
-
-<%= link_to 'Edit', edit_ordenanza_path(@ordenanza) %> |
-<%= link_to 'Back', ordenanzas_path %>
