@@ -11,6 +11,14 @@
               )
 %>
 
+<%= select_tag(:temas,
+                options_for_select(
+                  @temas
+                ),
+                {class: "form-control select2_dropdown", id: "selector_tema"}
+              )
+%>
+
 <table>
   <thead>
     <tr>

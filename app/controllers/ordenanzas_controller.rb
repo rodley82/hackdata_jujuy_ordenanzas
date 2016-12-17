@@ -6,6 +6,8 @@ class OrdenanzasController < ApplicationController
   def index
     @anios = Ordenanza.select(:anio).uniq.map do | ord | ord.anio end
 
+    @temas = Ordenanza.select(:tema).uniq.map do | ord | ord.tema end
+
     #TODO: Borrar
     @ordenanzas = Ordenanza.limit(10)
   end
