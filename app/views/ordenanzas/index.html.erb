@@ -1,30 +1,50 @@
 <p id="notice"><%= notice %></p>
 
+<div class="row">
+                
+    <section id="main" class="col-md-6 col-md-offset-3">
 
-<h1>Listing Ordenanzas</h1>
+		<h1>Listado de Ordenanzas de San Salvador de Jujuy</h1>
+		
+		<div class="panel panel-default">
+			<form class="panel-body form-horizontal payment-form" name="formBusqueda">
+				<div class="form-group">
+					<label for="selector_anio" class="col-md-4 control-label">Seleccione un Año:</label>
+					
+					<%= select_tag(:anios,
+									options_for_select(
+										@anios
+									),
+									{class: "form-control col-md-8", id: "selector_anio"}
+								  )
+					%>
+					
+				</div>
+			</form>
+		</div>
+		
+		<%= select_tag(:anios,
+						options_for_select(
+						  @anios
+						),
+						{class: "form-control select2_dropdown", id: "selector_anio"}
+					  )
+		%>
 
-<%= select_tag(:anios,
-                options_for_select(
-                  @anios
-                ),
-                {class: "form-control select2_dropdown", id: "selector_anio"}
-              )
-%>
-
-<%= select_tag(:temas,
-                options_for_select(
-                  @temas
-                ),
-                {class: "form-control select2_dropdown", id: "selector_tema"}
-              )
-%>
+		<%= select_tag(:temas,
+						options_for_select(
+						  @temas
+						),
+						{class: "form-control select2_dropdown", id: "selector_tema"}
+					  )
+		%>
 
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Ordenanza</th>
       <th>Titulo</th>
-      <th colspan="3"></th>
+
     </tr>
   </thead>
 
@@ -33,8 +53,7 @@
       <tr>
         <th><%= ordenanza.anio %> / <%= ordenanza.numero %></th>
         <td><%= link_to ordenanza.titulo || ordenanza.sintesis, ordenanza %></td>
-        <td><%= link_to 'Edit', edit_ordenanza_path(ordenanza) %></td>
-        <td><%= link_to 'Destroy', ordenanza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+       
       </tr>
     <% end %>
   </tbody>
@@ -42,6 +61,7 @@
 
 <br>
 
-<% if false %>
-	<%= link_to 'New Ordenanza', new_ordenanza_path %>
-<% end %>
+	
+	</section>
+</div>	
+
