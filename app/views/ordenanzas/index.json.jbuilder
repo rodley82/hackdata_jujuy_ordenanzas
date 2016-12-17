@@ -1,0 +1,1 @@
+json.array! @ordenanzas, partial: 'ordenanzas/ordenanza', as: :ordenanza

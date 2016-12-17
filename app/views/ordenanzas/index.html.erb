@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ordenanzas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Fecha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ordenanzas.each do |ordenanza| %>
+      <tr>
+        <td><%= ordenanza.titulo %></td>
+        <td><%= ordenanza.fecha %></td>
+        <td><%= link_to 'Show', ordenanza %></td>
+        <td><%= link_to 'Edit', edit_ordenanza_path(ordenanza) %></td>
+        <td><%= link_to 'Destroy', ordenanza, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ordenanza', new_ordenanza_path %>

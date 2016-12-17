@@ -1,0 +1,1 @@
+json.partial! "ordenanzas/ordenanza", ordenanza: @ordenanza
