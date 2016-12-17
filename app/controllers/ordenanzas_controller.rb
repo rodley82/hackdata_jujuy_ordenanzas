@@ -4,6 +4,11 @@ class OrdenanzasController < ApplicationController
   # GET /ordenanzas
   # GET /ordenanzas.json
   def index
+
+    #@anios = [[1982,1982],[1983,1983]]
+    @anios = [1982,1983,1984]
+
+    #TODO: Borrar
     @ordenanzas = Ordenanza.limit(10)
   end
 
