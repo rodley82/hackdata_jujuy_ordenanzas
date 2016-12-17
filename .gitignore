@@ -18,3 +18,5 @@
 !/log/.keep
 /vendor
 /tmp
+
+app/.dropbox
