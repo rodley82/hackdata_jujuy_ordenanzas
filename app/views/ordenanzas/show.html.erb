@@ -1,13 +1,39 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Titulo:</strong>
-  <%= @ordenanza.titulo %>
+  <strong>Numero:</strong>
+  <%= @ordenanza.numero %>
 </p>
 
 <p>
-  <strong>Fecha:</strong>
-  <%= @ordenanza.fecha %>
+  <strong>Año:</strong>
+  <%= @ordenanza.anio %>
+</p>
+
+<p>
+  <strong>Tema:</strong>
+  <%= @ordenanza.tema %>
+</p>
+
+<p>
+  <strong>Sintesis:</strong>
+  <%= @ordenanza.sintesis %>
+</p>
+
+<p>
+  <strong>Vigente?:</strong>
+  <%= @ordenanza.vigente %>
+</p>
+
+
+<p>
+  <strong>Unidad id?:</strong>
+  <%= @ordenanza.unidad_id %>
+</p>
+
+<p>
+  <strong>Generalidad id?:</strong>
+  <%= @ordenanza.generalidad_id %>
 </p>
 
 <%= link_to 'Edit', edit_ordenanza_path(@ordenanza) %> |
