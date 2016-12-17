@@ -13,4 +13,11 @@ jQuery ->
       Turbolinks.visit('anios/' + anio_seleccionado)
   )
 
+
+  $( "#selector_tema" ).on("select2:select", 
+    (e)->
+      tema_seleccionado = e.params.data.text
+      Turbolinks.visit('temas/' + tema_seleccionado)
+  )
+
   
