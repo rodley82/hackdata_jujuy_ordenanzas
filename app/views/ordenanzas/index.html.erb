@@ -23,7 +23,7 @@
   <tbody>
     <% @ordenanzas.each do |ordenanza| %>
       <tr>
-        <td><%= ordenanza.titulo %></td>
+        <td><%= ordenanza.titulo || ordenanza.sintesis %></td>
         <td><%= ordenanza.fecha %></td>
         <td><%= link_to 'Show', ordenanza %></td>
         <td><%= link_to 'Edit', edit_ordenanza_path(ordenanza) %></td>
