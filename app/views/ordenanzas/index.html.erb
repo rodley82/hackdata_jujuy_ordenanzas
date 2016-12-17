@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+
 <h1>Listing Ordenanzas</h1>
+
+<%= select_tag(:anios,
+                options_for_select(
+                  @anios
+                ),
+                {class: "form-control select2_dropdown", id: "selector_anio"}
+              )
+%>
 
 <table>
   <thead>
